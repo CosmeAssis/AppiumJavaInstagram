@@ -43,12 +43,14 @@ public class InstagramTest {
         driverFactory.getDriver().findElement(fieldSearch).click();
         String nomePesquisado = "bybiancaneves";
         driverFactory.getDriver().getKeyboard().sendKeys(nomePesquisado);
-        String nomeFull = "BIANCA NEVES ☆";
+        String nomeFull = "Bianca Neves";
         By searchResult = By.xpath("//android.widget.TextView[contains(@text, '" + nomeFull + "')]");
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchResult));
-        //System.out.println(searchResult);
-        MobileElement result = driverFactory.getDriver().findElement(searchResult);
-        result.click();
+//       System.out.println(searchResult);
+       MobileElement result = driverFactory.getDriver().findElement(searchResult);
+       result.click();
+//        MobileElement instaBianca = driverFactory.getDriver().findElementByAccessibilityId("9cb83e93-1d71-43f5-a1ee-050e96fa81bb");
+//        instaBianca.click();
         By buttonMensagem = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.Button[2]/android.widget.FrameLayout\n");
         wait.until(ExpectedConditions.visibilityOfElementLocated(buttonMensagem));
         MobileElement clickButtonMensagem = driverFactory.getDriver().findElement(buttonMensagem);
